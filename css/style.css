@@ -529,8 +529,9 @@ body {
 }
 
 /* ---------- Экран «Готово» ---------- */
+/* display задаёт только .screen.is-active: безусловный display:flex здесь
+   перекрыл бы .screen{display:none}, и «Готово» висело бы под каждым экраном. */
 .screen--done {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 24px;
