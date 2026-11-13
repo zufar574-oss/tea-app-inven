@@ -254,7 +254,9 @@
 
   /* ---------- Экран «Готово» (после экспорта) ----------
    * opts = { fileName, canShare, onDownload, onShare, onBackToList, onNewAct, onCheck }.
-   * «Поделиться» — только при canShare. «Сверить остатки» (onCheck) — только для приёмки. */
+   * «Поделиться» — только при canShare. «Сверить остатки» (onCheck) — только для приёмки.
+   * Инструкции по импорту в МойСклад на экране не показываются (убраны по
+   * запросу пользователя) — полные шаги импорта живут в README, п. 4. */
   function showDone(opts) {
     opts = opts || {};
     $("doneFileName").textContent = opts.fileName || "";

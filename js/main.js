@@ -466,11 +466,13 @@
 
   function buildBlob() {
     var act = data.buildAct(currentMode, currentList);
-    var ws = XLSX.utils.json_to_sheet(act.rows, { header: data.ACT_COLS });
+    // Колонки — из buildAct: для инвентарки поле количества называется
+    // «Фактический остаток» (шаблон импорта МойСклада), для приёмки — «Количество».
+    var cols = act.cols || data.ACT_COLS;
+    var ws = XLSX.utils.json_to_sheet(act.rows, { header: cols });
 
     // Ширины колонок — по содержимому (шапка + данные), с разумными пределами.
     // На распознавание МойСкладом ширины не влияют, но файл выглядит читаемо.
-    var cols = data.ACT_COLS;
     var widths = cols.map(function (c) {
       var max = c.length;
       act.rows.forEach(function (r) {
