@@ -11,7 +11,7 @@
    Все пути относительные ('./…'), чтобы работать и на GitHub Pages subpath.
    ============================================================ */
 
-const CACHE = 'tea-app-v1';
+const CACHE = 'tea-app-v4';
 const SHELL = [
   './',
   './index.html',
